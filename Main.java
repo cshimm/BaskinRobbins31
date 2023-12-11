@@ -33,12 +33,16 @@ public class Main {
             long start = System.nanoTime();
             var result = baskinRobbinsHelper(value);
             System.out.println(value + ": " + (System.nanoTime() - start));
+            MemoryUsageAnalyzer.PrintHeapMemoryUsage();
+            MemoryUsageAnalyzer.PrintNonHeapMemoryUsage();
         }
-        System.out.println();
+        System.out.println("**************************************");
         for (var value : values) {
             long start = System.nanoTime();
             var result = baskinRobbinsHelper_memoization(value);
             System.out.println(value + ": " + (System.nanoTime() - start));
+            MemoryUsageAnalyzer.PrintHeapMemoryUsage();
+            MemoryUsageAnalyzer.PrintNonHeapMemoryUsage();
         }
     }
 
